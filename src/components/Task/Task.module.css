@@ -1,0 +1,69 @@
+.title {
+  max-width: 200px;
+  word-wrap: break-word;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.select {
+  margin-bottom: 15px;
+}
+.label {
+  display: flex;
+  font-size: 14px;
+  align-self: flex-end;
+  height: 20px;
+}
+@-webkit-keyframes hvr-ripple-in {
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes hvr-ripple-in {
+  100% {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: absolute;
+  border: none;
+  padding: 10px 20px;
+  background-color: coral;
+  bottom: 20px;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  border: coral solid 4px;
+  top: -12px;
+  right: -12px;
+  bottom: -12px;
+  left: -12px;
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.button:hover:before,
+.button:focus:before,
+.button:active:before {
+  -webkit-animation-name: hvr-ripple-in;
+  animation-name: hvr-ripple-in;
+}
+@media (min-width: 500px) and (max-width: 768px) {
+  .title {
+    max-width: 150px;
+  }
+}

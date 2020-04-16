@@ -1,0 +1,14 @@
+:global(body) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(255, 127, 80, 0.096);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
