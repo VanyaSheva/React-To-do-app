@@ -29,6 +29,19 @@ export default class App extends React.Component {
     }));
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.tasks !== this.state.tasks) {
+      localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
+    }
+  }
+
+  componentDidMount() {
+    const persistedTasks = localStorage.getItem("tasks");
+    if (persistedTasks) {
+      this.setState({ tasks: JSON.parse(persistedTasks) });
+    }
+  }
+
   onCompleteChange = (id) => {
     this.setState((state) => ({
       tasks: state.tasks.map((task) =>
